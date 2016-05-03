@@ -7,8 +7,10 @@
         <mkdir dir="${build}"/>
     </target>
     <target name="compile" depends="init" description="compile the source">
-        <javac srcdir="${src}" destdir="${build}" failonerror="true">
-            <compilerarg value="-Xlint:unchecked" />
+        <javac srcdir="${src}" destdir="${build}" includeantruntime="false" failonerror="true">
+        <!-- <javac srcdir="${src}" destdir="${build}"> -->
+            <!-- <compilerarg value="-Xlint" /> -->
+            <compilerarg value="-Xlint:unchecked"/>
         </javac>
     </target>
     <target name="dist" depends="compile" description="generate the distribution">

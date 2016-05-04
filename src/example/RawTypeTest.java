@@ -7,11 +7,10 @@ import java.util.ArrayList;
  */
 public class RawTypeTest {
     public static void main(String[] args) {
-        System.out.println("hello");
-        ArrayList l = new ArrayList();
+        ArrayList l;
         ArrayList<Integer> il = new ArrayList<Integer>();
-        l = il;
-        l.add(1);
-        System.out.println(l.get(0));
+        //l = il;
+        //l.add(1);
+        //System.out.println(l.get(0));
     }
 }

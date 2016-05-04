@@ -1,24 +1,16 @@
-<project name="my-app" default="compile" basedir=".">
+<project name="rawtypetest" default="compile" basedir=".">
     <property name="build" location="build"/>
     <property name="src" location="src/example"/>
-    <property name="dist" location="dist"/>
-    <property name="version" value="1.0"/>
     <target name="init">
         <mkdir dir="${build}"/>
     </target>
     <target name="compile" depends="init" description="compile the source">
-        <javac srcdir="${src}" destdir="${build}" includeantruntime="false" failonerror="true">
-        <!-- <javac srcdir="${src}" destdir="${build}"> -->
-            <!-- <compilerarg value="-Xlint" /> -->
-            <compilerarg value="-Xlint:unchecked"/>
+        <javac srcdir="${src}" destdir="${build}" includeantruntime="false">
+            <!-- <compilerarg value="-Werror"/> -->
+            <compilerarg value="-Xlint:rawtypes"/>
         </javac>
-    </target>
-    <target name="dist" depends="compile" description="generate the distribution">
-        <mkdir dir="${dist}"/>
-        <jar jarfile="${dist}/raw-type-${version}.jar" basedir="${build}"/>
     </target>
     <target name="clean">
         <delete dir="${build}"/>
-        <delete dir="${dist}"/>
     </target>
 </project>
